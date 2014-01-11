@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery-bittorrent-sync</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <style>
+        html {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .b-getStarted button {
+            font-size: 18px;
+        }
+        .b-bitTorrent {
+            display: none;
+        }
+        .b-message {
+            color: orangered;
+        }
+
+        .b-dir {
+            float: left;
+            margin: 10px;
+            cursor: pointer;
+            width: 270px;
+            height: 120px;
+            background: #094ab2;
+            font-size: 18px;
+            color: #fff;
+            padding: 10px;
+            position: relative;
+        }
+        .b-dir:hover {
+            -webkit-animation-name: 'pulse_animation';
+            -webkit-animation-duration: 5000ms;
+            -webkit-transform-origin:70% 70%;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+        }
+        .b-dir--type_file {
+            background: #4f71c0;
+        }
+        .b-dir__path {}
+        .b-dir__size {
+            font-size: 14px;
+        }
+        .b-dir__secret {
+            font-size: 11px;
+            color: #4f71c0;
+        }
+        .b-dir__files {
+            top: auto;
+            bottom: 10px;
+            position: absolute;
+            right: 10px;
+        }
+        @-webkit-keyframes pulse_animation {
+            0% { -webkit-transform: scale(1); }
+            30% { -webkit-transform: scale(1); }
+            40% { -webkit-transform: scale(1.08); }
+            50% { -webkit-transform: scale(1); }
+            60% { -webkit-transform: scale(1); }
+            70% { -webkit-transform: scale(1.05); }
+            80% { -webkit-transform: scale(1); }
+            100% { -webkit-transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+<div class="b-wrapper">
+    <div class="b-getStarted">
+        <button>Get access</button>
+        <div class="b-message"></div>
+    </div>
+    <div class="b-bitTorrent">
+    </div>
+</div>
+</body>
+<script id="template-directory" type="text/template">
+    <div class="b-dir">
+        <div class="b-dir__path"><%= dir%></div>
+        <div class="b-dir__size">Size: <%= size%></div>
+        <div class="b-dir__secret"><%= secret%></div>
+        <div class="b-dir__files">Files: <%= files%></div>
+    </div>
+</script>
+<script id="template-file" type="text/template">
+    <div class="b-dir b-dir--type_file">
+        <div class="b-dir__name"><%= name%></div>
+        <div class="b-dir__size">Size: <%= size%></div>
+    </div>
+</script>
+<script id="template-folder" type="text/template">
+    <div class="b-dir">
+        <div class="b-dir__name"><%= name%></div>
+    </div>
+</script>
+<script type="text/javascript" src="http://yandex.st/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://yandex.st/underscore/1.5.2/underscore-min.js"></script>
+<script type="text/javascript" src="bittorrent-sync.js"></script>
+<script type="text/javascript" src="index.js"></script>
+
+</html>
