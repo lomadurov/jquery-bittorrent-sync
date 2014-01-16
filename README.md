@@ -1,7 +1,7 @@
 jQuery BitTorrent Sync
 =====================
 A simple wrapper for the [BitTorrent Sync API](http://www.bittorrent.com/intl/en/sync/developers/api), based at [node-bittorrent-sync](https://github.com/yannickcr/node-bittorrent-sync).
-[Demonstration page](http://jsfiddle.net/lomatek/An6P2/embedded/result/).
+[Demonstration page](http://jsfiddle.net/lomatek/An6P2/embedded/result/) (Only works with enabled api).
 
  1. [BitTorrent Sync API](http://www.bittorrent.com/intl/ru/sync/developers/api)
  2. [Зачем нужен BitTorrent Sync](http://habrahabr.ru/post/201072)
